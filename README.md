@@ -136,9 +136,10 @@ var Months_from_diagnosis_to_treatm Survival_months;
 run;
 ```
 Insights:
+
 Variations in survival months were observed among different groups, highlighting potential disparities in survival outcomes based on demographic or clinical characteristics.
 
-## Chi-Square Analysis for 5-Year Survival and Race
+## Chi-Square Analysis 
 Chi-square tests were performed to examine the association between categorical variables such as race and chemotherapy, as well as survival and chemotherapy.
 These tests help understand the relationships between categorical variables and identify any significant associations.
 
@@ -214,6 +215,8 @@ means Age_recode_with__1_year_olds/ Tukey;
 run;
 
 ```
+Insights: 
+
 The ANOVA test yielded a statistically significant difference in survival months among different age categories (p < 0.05). This indicates that age is associated with variations in survival months, with certain age groups experiencing longer or shorter survival times compared to others.
 
 ## Independent T-Test
@@ -228,6 +231,8 @@ proc ttest data=my_projectBC2a;
    var Survival_months1; /* Use the transformed variable */
 run;
 ```
+Insights:
+
 The independent t-test showed a statistically significant difference in survival months between males and females (p < 0.05).Females exhibited significantly higher survival rates compared to males, suggesting that gender may influence survival outcomes in breast cancer patients.
 
 ## Box Plot : Survival Months by Gender
@@ -272,6 +277,8 @@ proc reg data=my_projectBC2a;
    model Survival_months = Age_recode_with__1_year_olds Sex Chemotherapy_recode__yes__no_un / r;
 run;
 ```
+Insights:
+
 The linear regression model demonstrated that all variables included were significantly associated with survival months (p < 0.05), with an R-squared value of approximately 0.26. The model explained around 26% of the variability in survival months and provided valuable insights into the factors affecting survival outcomes in breast cancer patients.
 
 
